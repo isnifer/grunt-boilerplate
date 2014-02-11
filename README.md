@@ -3,22 +3,22 @@ Grunt-boilerplate
 
 ## Blank template for each new project ##
 
-- #### Install dependencies ####
+##### Install dependencies #####
 ```bash
 npm install --save-dev
 ```
 
-- #### Run ####
+##### Run #####
 ```bash
 grunt
 ```
 
-- #### Minify common.js ####
+##### Minify common.js #####
 ```bash
 grunt min
 ```
 
-- #### FTP-deploy (before that check your FTP settings: IP, login, pass, etc.) ####
+##### FTP-deploy (before that check your FTP settings: IP, login, pass, etc.) #####
 ```bash
 grunt deploy
 ```
