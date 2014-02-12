@@ -10,35 +10,18 @@ module.exports = function (grunt) {
                     livereload: true,
                     tasks: ['stylus:compile']
                 },
-                files: ['*.html', 'css/style.min.css']
+                files: ['*.html', 'css/style.css', 'js/*.js']
             },
 
             css: {
                 files: ['src/stylus/*.styl'],
                 tasks: ['stylus:compile']
-            },
-            
-
-            js: {
-                files: ['src/js/*.js'],
-                tasks: ['uglify']
             }
-
         },
 
         stylus: {
 
             compile: {
-                options: {
-                    compress: true,
-                    paths: ['stylus']
-                },
-                files: {
-                    'css/style.min.css': 'src/stylus/style.styl'
-                }
-            },
-
-            normal: {
                 options: {
                     compress: false,
                     paths: ['stylus']
@@ -56,7 +39,26 @@ module.exports = function (grunt) {
             },
             target: {
                 files: {
-                    'js/common.min.js': 'src/js/common.js'
+                    'js/common.min.js': 'js/common.js'
+                }
+            }
+        },
+
+        csscomb: {
+            options: {
+                config: 'csscomb.json'
+            },
+            foo: {
+                files: {
+                    'css/style.sorted.css': ['css/style.css']
+                }
+            }
+        },
+
+        cssmin: {
+            minify: {
+                files: {
+                    'css/style.min.css': ['css/style.sorted.css']
                 }
             }
         },
@@ -68,7 +70,7 @@ module.exports = function (grunt) {
                     port: 21,
                     authKey: 'projects'
                 },
-                //src: 'E:/Webservers/domains/grunt.dev/',
+                //src: 'D:/Webservers/domains/grunt.dev/',
                 src: 'D:/Webservers/domains/grunt.dev/',
                 dest: '/kuznetsovanton.ru/public_html/projects/boilerplate/',
                 exclusions: ['node_modules', '**/Thumbs.db', '.git', '.idea', '.gitignore', '.ftppass']
@@ -80,12 +82,13 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-csscomb');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-ftp-deploy');
 
     // Our tasks
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('min', ['watch']);
+    grunt.registerTask('comb', ['csscomb:foo', 'cssmin']);
     grunt.registerTask('deploy', ['ftp-deploy:build']);
 
 };

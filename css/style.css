@@ -1,0 +1,38 @@
+/* Внешние шрифты */
+/* Глобальные стили */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.g-clf:after,
+.g-clf:before {
+  clear: both;
+  display: table;
+  content: "";
+}
+/* Обвязка */
+html,
+body {
+  height: 100%;
+  font: normal 16px "Arial", Verdana, Tahoma;
+}
+.page {
+  position: relative;
+  min-height: 100%;
+  width: 960px;
+  margin: 0 auto;
+}
+/* Шапка */
+.header {
+  line-height: 1;
+  font: bold 3em "Georgia";
+}
+/* Сайдбар */
+/* Основной контент */
+.main {
+  display: block;
+}
+/* Подвал */
+/* Всплывающие, модальные окна */
+/* Responsive CSS */
