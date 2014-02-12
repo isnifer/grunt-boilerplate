@@ -18,6 +18,11 @@ grunt
 grunt min
 ```
 
+##### CSS Sort and Minify (csscomb, cssmin) #####
+```bash
+grunt comb
+```
+
 ##### FTP-deploy (before that check your FTP settings: IP, login, pass, etc.) #####
 ```bash
 grunt deploy
