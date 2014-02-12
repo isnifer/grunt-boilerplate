@@ -56,9 +56,12 @@ module.exports = function (grunt) {
         },
 
         cssmin: {
+            options: {
+                keepSpecialComments: 0
+            },
             minify: {
                 files: {
-                    'css/style.min.css': ['css/style.sorted.css']
+                    'css/style.min.css': ['css/normalize.css', 'css/style.sorted.css']
                 }
             }
         },

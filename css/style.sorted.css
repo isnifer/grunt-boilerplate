@@ -9,7 +9,7 @@
 .g-clf:after,
 .g-clf:before
 {
-    display: table;
+    display: table;
     clear: both;
 
     content: '';
