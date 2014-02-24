@@ -1,9 +1,9 @@
 {
-  "name": "GruntSetup",
-  "version": "0.0.1",
+  "name": "GruntBoilerplate",
+  "version": "0.0.3",
   "main": "Gruntfile.js",
   "author": "isnifer",
-  "description": "First Grunt Setup",
+  "description": "Grunt Boilerplate",
   "homepage": "http://isnifer.me",
   "license": "MIT",
   "repository": { 
@@ -18,6 +18,6 @@
     "grunt-contrib-jshint": "~0.6.4",
     "grunt-ftp-deploy": "0.0.10",
     "grunt-csscomb": "~2.0.1",
-    "grunt-contrib-cssmin": "~0.7.0"
+    "grunt-contrib-cssmin": "~0.8.0"
   }
 }
